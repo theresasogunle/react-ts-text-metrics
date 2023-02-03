@@ -8,7 +8,7 @@ const textStyles: CSSProperties = {
   lineHeight: '35px',
   fontFamily: 'Helvetica, Arial, sans-serif',
   fontWeight: 400,
-  //width: 100,
+  width: 100,
   paddingLeft: '10px',
   paddingRight: '5px',
   whiteSpace: 'pre-wrap'
@@ -34,6 +34,8 @@ function App() {
   const height = textMetrics.height(TEXT)
   const padding = textMetrics.padding()
   const lines = textMetrics.lines(TEXT)
+  const maxFontSize = textMetrics.maxFontSize(TEXT)
+  console.log({ maxFontSize })
   //const parseArgs = parseArgsa().
 
   return (
@@ -48,6 +50,7 @@ function App() {
           Padding: { padding } <br/>
           Height: { height } <br/>
           lines: { lines.join(",") } <br/>
+          maxFontSize: { maxFontSize } <br/>
         </p>
         <a
           className="App-link"
