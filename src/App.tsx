@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import logo from './logo.svg';
-import textMetrics from 'text-metrics';
+import { init } from 'text-metrics';
 import './App.css';
 
-const textStyles = {
+const textStyles: CSSProperties = {
   fontSize: '30px',
-  lineHeight: '20px',
+  lineHeight: '35px',
   fontFamily: 'Helvetica, Arial, sans-serif',
   fontWeight: 400,
-  width: 100,
+  //width: 100,
+  paddingLeft: '10px',
+  paddingRight: '5px',
+  whiteSpace: 'pre-wrap'
 }
 
-const TEXT = "unicorns"
+const TEXT = 
+`u
+n
+i
+c
+o
+r
+n
+s
+`
 
 function App() {
   
 
-  const textMetrics = textMetrics.init(textStyles);
+  const textMetrics = init(textStyles);
 
   const width = textMetrics.width(TEXT)
+  const height = textMetrics.height(TEXT)
+  const padding = textMetrics.padding()
+  const lines = textMetrics.lines(TEXT)
+  //const parseArgs = parseArgsa().
 
   return (
     <div className="App">
@@ -28,7 +44,10 @@ function App() {
           { TEXT } 
         </p>
         <p>
-          Width: { width }
+          Width: { width } <br/>
+          Padding: { padding } <br/>
+          Height: { height } <br/>
+          lines: { lines.join(",") } <br/>
         </p>
         <a
           className="App-link"
