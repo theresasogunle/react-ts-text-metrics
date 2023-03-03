@@ -12,7 +12,7 @@ declare module "text-metrics" {
 
   export interface TextMetrics {
     parseArgs: (
-      textOrOptions: string | Options,
+      textOrOptions?: string | Options,
       optionsOrStyleOverwrites: Options | Styles,
       styleOverwrites?: Styles
     ) => {
@@ -22,22 +22,22 @@ declare module "text-metrics" {
       styles: Styles;
     };
     width: (
-      textOrOptions: string | Options,
+      textOrOptions?: string | Options,
       optionsOrStyleOverwrites?: Options | Styles,
       styleOverwrites?: Styles
     ) => number;
     height: (
-      textOrOptions: string | Options,
+      textOrOptions?: string | Options,
       optionsOrStyleOverwrites?: Options | Styles,
       styleOverwrites?: Styles
     ) => number;
     lines: (
-      textOrOptions: string | Options,
+      textOrOptions?: string | Options,
       optionsOrStyleOverwrites?: Options | Styles,
       styleOverwrites?: Styles
     ) => string[];
     maxFontSize: (
-      textOrOptions: string | Options,
+      textOrOptions?: string | Options,
       optionsOrStyleOverwrites?: Options | Styles,
       styleOverwrites?: Styles
     ) => string | undefined;
